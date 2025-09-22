@@ -15,7 +15,7 @@ tidio_script = """
 # The key here is to allow Tidio to create its floating UI *outside* this minimal iframe.
 # If Tidio is designed to inject elements into the *parent* document, this will work.
 # If Tidio strictly renders within its own iframe, we need another approach (see next point).
-components.html(tidio_script, height=1, scrolling=False) # Ensure minimal footprint for the script embedder
+components.html(tidio_script, height=771, scrolling=False) # Ensure minimal footprint for the script embedder
 
 # Your normal Streamlit app content goes here
 st.title("My Streamlit App")
