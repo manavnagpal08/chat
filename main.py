@@ -14,7 +14,7 @@ tidio_script = """
 
 # Embed the Tidio script
 # Allow Tidio to create its iframe within this component and manage its own position.
-components.html(tidio_script, height=1, scrolling=False) # Set scrolling to False if only embedding script
+components.html(tidio_script, height=700, scrolling=False) # Set scrolling to False if only embedding script
 
 # Your normal Streamlit app content goes here
 st.title("My Streamlit App")
