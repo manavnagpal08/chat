@@ -1,43 +1,23 @@
 import streamlit as st
+import streamlit.components.v1 as components
 
-st.set_page_config(page_title="ScreenerPro Partner Portal")
+# Set up your Streamlit app layout
+st.title("My Streamlit App with Tidio Chatbot")
+st.write("Welcome to my app. You can find support using the chatbot in the corner!")
 
-st.title("🚀 ScreenerPro Partner Portal")
-st.write(
-    "Showcase your skills, collaborate with teams, earn badges, "
-    "and apply to jobs — all in one modern career hub."
-)
+# Your existing Streamlit code goes here
+st.header("App Content")
+st.write("This is where the main content of your application would be.")
+st.write("For example, a data dashboard, a user form, or any other interactive elements.")
 
-# ✅ Inject Tidio into the TOP page, not just Streamlit iframe
-st.markdown(
-    """
-    <script>
-    (function() {
-        var s = document.createElement("script");
-        s.src = "//code.tidio.co/c19vp8j19zbvdpbrizjxmw1apt8buoie.js";
-        s.async = true;
-        s.onload = function() {
-            function moveTidio() {
-                var iframe = window.top.document.querySelector("#tidio-chat-iframe");
-                if (iframe) {
-                    iframe.style.position = "fixed";
-                    iframe.style.left = "20px";
-                    iframe.style.right = "auto";
-                    iframe.style.bottom = "20px";
-                    iframe.style.zIndex = "999999";
-                } else {
-                    setTimeout(moveTidio, 500);
-                }
-            }
-            if (window.tidioChatApi) {
-                window.tidioChatApi.on("ready", moveTidio);
-            } else {
-                window.top.document.addEventListener("tidioChat-ready", moveTidio);
-            }
-        };
-        window.top.document.body.appendChild(s);
-    })();
-    </script>
-    """,
-    unsafe_allow_html=True
-)
+# Paste your Tidio JavaScript code into the html() function
+# Replace 'your_unique_public_key.js' with the actual key from your Tidio account
+tidio_script = """
+    <!-- Start of Tidio Script -->
+    <script src="//code.tidio.co/c19vp8j19zbvdpbrizjxmw1apt8buoie.js" async></script>
+    <!-- End of Tidio Script -->
+"""
+
+# Embed the HTML component
+components.html(tidio_script, height=0)
+
