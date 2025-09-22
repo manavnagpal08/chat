@@ -52,4 +52,4 @@ if (window.tidioChatApi) {
 """
 
 # Inject script without taking space
-components.html(tidio_script, height=7000, width=0, scrolling=False)
+components.html(tidio_script, height=700, width=0, scrolling=False)
