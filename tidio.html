@@ -3,23 +3,35 @@ import streamlit as st
 st.set_page_config(page_title="ScreenerPro Partner Portal")
 
 st.title("🚀 ScreenerPro Partner Portal")
-st.write("Showcase your skills, collaborate with teams, earn badges, and apply to jobs — all in one modern career hub.")
+st.write(
+    "Showcase your skills, collaborate with teams, earn badges, "
+    "and apply to jobs — all in one modern career hub."
+)
 
-# ✅ Inject directly into main DOM
+# ✅ Inject Tidio directly into Streamlit DOM (not inside iframe)
 st.markdown(
     """
     <!-- Load Tidio -->
     <script src="//code.tidio.co/c19vp8j19zbvdpbrizjxmw1apt8buoie.js" async></script>
 
     <script>
-    function onTidioChatApiReady() {
-        // Move to bottom-left
-        tidioChatApi.adjustStyles('#tidio { left: 20px !important; right: auto !important; bottom: 20px !important; }');
+    function moveTidio() {
+        const iframe = document.querySelector("#tidio-chat-iframe");
+        if (iframe) {
+            iframe.style.position = "fixed";
+            iframe.style.left = "20px";
+            iframe.style.right = "auto";
+            iframe.style.bottom = "20px";
+            iframe.style.zIndex = "999999";
+        } else {
+            setTimeout(moveTidio, 500);
+        }
     }
+
     if (window.tidioChatApi) {
-        window.tidioChatApi.on("ready", onTidioChatApiReady);
+        window.tidioChatApi.on("ready", moveTidio);
     } else {
-        document.addEventListener("tidioChat-ready", onTidioChatApiReady);
+        document.addEventListener("tidioChat-ready", moveTidio);
     }
     </script>
     """,
