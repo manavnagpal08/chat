@@ -1,24 +1,11 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Tidio Widget</title>
-</head>
-<body>
-  <!-- Tidio widget -->
-  <script src="//code.tidio.co/c19vp8j19zbvdpbrizjxmw1apt8buoie.js" async></script>
+import streamlit as st
+import streamlit.components.v1 as components
 
-  <script>
-  function onTidioChatApiReady() {
-      // Pin bottom-left
-      tidioChatApi.adjustStyles('#tidio { left: 20px !important; right: auto !important; bottom: 20px !important; }');
-  }
-  if (window.tidioChatApi) {
-      window.tidioChatApi.on('ready', onTidioChatApiReady);
-  } else {
-      document.addEventListener('tidioChat-ready', onTidioChatApiReady);
-  }
-  </script>
-</body>
-</html>
+st.set_page_config(page_title="ScreenerPro with Tidio")
+
+st.title("🚀 ScreenerPro Partner Portal")
+st.write("Showcase your skills, collaborate with teams, earn badges, and apply to jobs — all in one modern career hub.")
+
+# ✅ Load external HTML (Tidio widget)
+with open("tidio.html", "r", encoding="utf-8") as f:
+    components.html(f.read(), height=0, width=0)
