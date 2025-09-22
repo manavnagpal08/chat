@@ -8,18 +8,17 @@ st.write("Showcase your skills, collaborate with teams, earn badges, and apply t
 
 components.html(
     """
-    <!-- Tidio base script -->
+    <!-- Load Tidio -->
     <script src="//code.tidio.co/c19vp8j19zbvdpbrizjxmw1apt8buoie.js" async></script>
-    
-    <!-- Force bottom-left position -->
+
     <script>
     function onTidioChatApiReady() {
-        // Desktop
-        tidioChatApi.adjustStyles('#tidio { left: 20px !important; right: auto !important; bottom: 20px !important; }');
-        
-        // Mobile
+        // Move bubble to bottom-left
+        tidioChatApi.adjustStyles('#tidio-chat-iframe { left: 20px !important; right: auto !important; bottom: 20px !important; }');
+
+        // Mobile override
         tidioChatApi.adjustStyles(
-          '@media only screen and (max-width: 980px) { #tidio { left: 20px !important; right: auto !important; bottom: 20px !important; } }'
+          '@media only screen and (max-width: 980px) { #tidio-chat-iframe { left: 20px !important; right: auto !important; bottom: 20px !important; } }'
         );
     }
     if (window.tidioChatApi) {
