@@ -13,12 +13,13 @@ components.html(
 
     <script>
     function onTidioChatApiReady() {
-        // Move bubble to bottom-left
+        // Apply styles to iframe & container
         tidioChatApi.adjustStyles('#tidio-chat-iframe { left: 20px !important; right: auto !important; bottom: 20px !important; }');
+        tidioChatApi.adjustStyles('#tidio { left: 20px !important; right: auto !important; bottom: 20px !important; }');
 
         // Mobile override
         tidioChatApi.adjustStyles(
-          '@media only screen and (max-width: 980px) { #tidio-chat-iframe { left: 20px !important; right: auto !important; bottom: 20px !important; } }'
+          '@media only screen and (max-width: 980px) { #tidio-chat-iframe, #tidio { left: 20px !important; right: auto !important; bottom: 20px !important; } }'
         );
     }
     if (window.tidioChatApi) {
