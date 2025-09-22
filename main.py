@@ -1,16 +1,16 @@
 import streamlit as st
+import streamlit.components.v1 as components
 
 st.set_page_config(page_title="ScreenerPro with Watson")
 
 st.title("💬 ScreenerPro with Watson Assistant")
 
-# Inject Watson Web Chat
-st.markdown("""
+components.html("""
 <script>
   window.watsonAssistantChatOptions = {
-    integrationID: "49156221-4969-48c2-8924-fd0b623c2f33", // The ID of this integration.
-    region: "au-syd", // The region your integration is hosted in.
-    serviceInstanceID: "bf63ba6f-d81c-4de9-9e39-645fd55f6cbb", // The ID of your service instance.
+    integrationID: "49156221-4969-48c2-8924-fd0b623c2f33",
+    region: "au-syd",
+    serviceInstanceID: "bf63ba6f-d81c-4de9-9e39-645fd55f6cbb",
     onLoad: async (instance) => { await instance.render(); }
   };
   setTimeout(function(){
@@ -21,4 +21,4 @@ st.markdown("""
     document.head.appendChild(t);
   });
 </script>
-""", unsafe_allow_html=True)
+""", height=0, width=0)
