@@ -1,11 +1,27 @@
 import streamlit as st
-import streamlit.components.v1 as components
 
-st.set_page_config(page_title="ScreenerPro with Tidio")
+st.set_page_config(page_title="ScreenerPro Partner Portal")
 
 st.title("🚀 ScreenerPro Partner Portal")
 st.write("Showcase your skills, collaborate with teams, earn badges, and apply to jobs — all in one modern career hub.")
 
-# ✅ Load external HTML (Tidio widget)
-with open("tidio.html", "r", encoding="utf-8") as f:
-    components.html(f.read(), height=0, width=0)
+# ✅ Inject directly into main DOM
+st.markdown(
+    """
+    <!-- Load Tidio -->
+    <script src="//code.tidio.co/c19vp8j19zbvdpbrizjxmw1apt8buoie.js" async></script>
+
+    <script>
+    function onTidioChatApiReady() {
+        // Move to bottom-left
+        tidioChatApi.adjustStyles('#tidio { left: 20px !important; right: auto !important; bottom: 20px !important; }');
+    }
+    if (window.tidioChatApi) {
+        window.tidioChatApi.on("ready", onTidioChatApiReady);
+    } else {
+        document.addEventListener("tidioChat-ready", onTidioChatApiReady);
+    }
+    </script>
+    """,
+    unsafe_allow_html=True
+)
