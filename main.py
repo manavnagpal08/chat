@@ -1,16 +1,8 @@
 import streamlit as st
-import streamlit.components.v1 as components
+from component_html import tidio_chatbot_component
 
-# Your Tidio JavaScript code with your unique key
-tidio_script = """
-    <!-- Start of Tidio Script -->
-    <script src="//code.tidio.co/c19vp8j19zbvdpbrizjxmw1apt8buoie.js" async></script>
-    <!-- End of Tidio Script -->
-"""
-
-# Inject the script directly into the Streamlit app
-# The Tidio widget handles its own fixed positioning.
-components.html(tidio_script, height=0)
+# Call the custom component at the start of your script
+tidio_chatbot_component()
 
 # Your normal Streamlit app content goes here
 st.title("My Streamlit App")
