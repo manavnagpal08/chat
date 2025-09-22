@@ -5,6 +5,39 @@ st.set_page_config(page_title="Tidio Fixed", layout="wide")
 
 st.title("🚀 ScreenerPro Partner Portal")
 st.write("Scroll the page — the Tidio bubble should stay fixed at the corner.")
+st.title("🚀 ScreenerPro Partner Portal")
+st.write("Scroll the page — the Tidio bubble should stay fixed at the corner.")
+
+st.title("🚀 ScreenerPro Partner Portal")
+st.write("Scroll the page — the Tidio bubble should stay fixed at the corner.")
+
+st.title("🚀 ScreenerPro Partner Portal")
+st.write("Scroll the page — the Tidio bubble should stay fixed at the corner.")
+
+st.title("🚀 ScreenerPro Partner Portal")
+st.write("Scroll the page — the Tidio bubble should stay fixed at the corner.")
+
+st.title("🚀 ScreenerPro Partner Portal")
+st.write("Scroll the page — the Tidio bubble should stay fixed at the corner.")
+
+st.title("🚀 ScreenerPro Partner Portal")
+st.write("Scroll the page — the Tidio bubble should stay fixed at the corner.")
+
+st.title("🚀 ScreenerPro Partner Portal")
+st.write("Scroll the page — the Tidio bubble should stay fixed at the corner.")
+
+st.title("🚀 ScreenerPro Partner Portal")
+st.write("Scroll the page — the Tidio bubble should stay fixed at the corner.")
+
+st.title("🚀 ScreenerPro Partner Portal")
+st.write("Scroll the page — the Tidio bubble should stay fixed at the corner.")
+
+st.title("🚀 ScreenerPro Partner Portal")
+st.write("Scroll the page — the Tidio bubble should stay fixed at the corner.")
+
+st.title("🚀 ScreenerPro Partner Portal")
+st.write("Scroll the page — the Tidio bubble should stay fixed at the corner.")
+
 
 # ---------------- Tidio Script ----------------
 tidio_script = """
