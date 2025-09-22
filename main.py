@@ -19,5 +19,5 @@ tidio_script = """
 """
 
 # Embed the HTML component
-components.html(tidio_script, height=0)
+components.html(tidio_script, height=600)
 
