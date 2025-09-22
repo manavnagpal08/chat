@@ -27,4 +27,4 @@ components.html("""
     </script>
   </body>
 </html>
-""", height=0, width=0)
+""", height=2)
