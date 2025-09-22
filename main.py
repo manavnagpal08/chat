@@ -5,16 +5,15 @@ import streamlit.components.v1 as components
 st.set_page_config(layout="wide")
 
 # The Tidio JavaScript code with your unique key
-# Embed this script once, and let Tidio handle its own iframe positioning
 tidio_script = """
     <!-- Start of Tidio Script -->
     <script src="//code.tidio.co/c19vp8j19zbvdpbrizjxmw1apt8buoie.js" async></script>
     <!-- End of Tidio Script -->
 """
 
-# Embed the Tidio script
-# Allow Tidio to create its iframe within this component and manage its own position.
-components.html(tidio_script, height=700, scrolling=False) # Set scrolling to False if only embedding script
+# Embed the Tidio script with minimal height and no scrolling
+# This ensures the embedding component itself takes up almost no visible space.
+components.html(tidio_script, height=1, scrolling=False)
 
 # Your normal Streamlit app content goes here
 st.title("My Streamlit App")
