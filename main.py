@@ -13,7 +13,7 @@ tidio_script = """
 
 # Embed the Tidio script with minimal height and no scrolling
 # This ensures the embedding component itself takes up almost no visible space.
-components.html(tidio_script, height=1, scrolling=False)
+components.html(tidio_script, height=701, scrolling=False)
 
 # Your normal Streamlit app content goes here
 st.title("My Streamlit App")
