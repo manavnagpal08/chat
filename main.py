@@ -1,23 +1,22 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
-# Set up your Streamlit app layout
-st.title("My Streamlit App with Tidio Chatbot")
-st.write("Welcome to my app. You can find support using the chatbot in the corner!")
-
-# Your existing Streamlit code goes here
-st.header("App Content")
-st.write("This is where the main content of your application would be.")
-st.write("For example, a data dashboard, a user form, or any other interactive elements.")
-
-# Paste your Tidio JavaScript code into the html() function
-# Replace 'your_unique_public_key.js' with the actual key from your Tidio account
+# Your Tidio JavaScript code with your unique key
 tidio_script = """
     <!-- Start of Tidio Script -->
     <script src="//code.tidio.co/c19vp8j19zbvdpbrizjxmw1apt8buoie.js" async></script>
     <!-- End of Tidio Script -->
 """
 
-# Embed the HTML component
-components.html(tidio_script, height=600)
+# The Tidio widget handles its own fixed positioning.
+# By setting height=0 for the iframe, we avoid adding extra
+# vertical space to the Streamlit app.
+components.html(tidio_script, height=0)
 
+# Your normal Streamlit app content goes here
+st.title("My Streamlit App")
+st.write("Scroll down to see that the Tidio widget stays in place.")
+st.header("Some App Content")
+st.write("This is some content to make the page long enough to scroll.")
+# Add more content to enable scrolling
+st.text("." * 1000)
