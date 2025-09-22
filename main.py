@@ -1,19 +1,17 @@
 import streamlit as st
-import streamlit.components.v1 as components
 
-# Set the page configuration
 st.set_page_config(layout="wide")
 
-# The Tidio JavaScript code with your unique key
 tidio_script = """
     <!-- Start of Tidio Script -->
     <script src="//code.tidio.co/c19vp8j19zbvdpbrizjxmw1apt8buoie.js" async></script>
     <!-- End of Tidio Script -->
 """
 
-# Embed the Tidio script with minimal height and no scrolling
-# This ensures the embedding component itself takes up almost no visible space.
-components.html(tidio_script, height=701, scrolling=False)
+# Embed the Tidio script directly into the Streamlit app's HTML.
+# WARNING: Using unsafe_allow_html=True can be a security risk if the HTML comes from untrusted sources.
+# Ensure you trust the Tidio script entirely.
+st.markdown(tidio_script, unsafe_allow_html=True)
 
 # Your normal Streamlit app content goes here
 st.title("My Streamlit App")
