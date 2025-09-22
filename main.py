@@ -1,58 +1,43 @@
 import streamlit as st
-st.title("🚀 ScreenerPro Partner Portal")
-st.write(
-    "Showcase your skills, collaborate with teams, earn badges, "
-    "and apply to jobs — all in one modern career hub."
-)
-st.title("🚀 ScreenerPro Partner Portal")
-st.write(
-    "Showcase your skills, collaborate with teams, earn badges, "
-    "and apply to jobs — all in one modern career hub."
-)
-st.title("🚀 ScreenerPro Partner Portal")
-st.write(
-    "Showcase your skills, collaborate with teams, earn badges, "
-    "and apply to jobs — all in one modern career hub."
-)
-st.title("🚀 ScreenerPro Partner Portal")
-st.write(
-    "Showcase your skills, collaborate with teams, earn badges, "
-    "and apply to jobs — all in one modern career hub."
-)
-st.title("🚀 ScreenerPro Partner Portal")
-st.write(
-    "Showcase your skills, collaborate with teams, earn badges, "
-    "and apply to jobs — all in one modern career hub."
-)
-st.title("🚀 ScreenerPro Partner Portal")
-st.write(
-    "Showcase your skills, collaborate with teams, earn badges, "
-    "and apply to jobs — all in one modern career hub."
-)
+
+st.set_page_config(page_title="ScreenerPro Partner Portal")
+
 st.title("🚀 ScreenerPro Partner Portal")
 st.write(
     "Showcase your skills, collaborate with teams, earn badges, "
     "and apply to jobs — all in one modern career hub."
 )
 
-st.components.v1.html(
+# ✅ Inject Tidio into the TOP page, not just Streamlit iframe
+st.markdown(
     """
-    <html>
-      <body>
-        <script src="//code.tidio.co/c19vp8j19zbvdpbrizjxmw1apt8buoie.js" async></script>
-        <script>
-        function onTidioChatApiReady() {
-            tidioChatApi.adjustStyles('#tidio { left: 20px !important; right: auto !important; bottom: 20px !important; position: fixed !important; z-index: 999999 !important;}');
-        }
-        if (window.tidioChatApi) {
-            window.tidioChatApi.on('ready', onTidioChatApiReady);
-        } else {
-            document.addEventListener('tidioChat-ready', onTidioChatApiReady);
-        }
-        </script>
-      </body>
-    </html>
+    <script>
+    (function() {
+        var s = document.createElement("script");
+        s.src = "//code.tidio.co/c19vp8j19zbvdpbrizjxmw1apt8buoie.js";
+        s.async = true;
+        s.onload = function() {
+            function moveTidio() {
+                var iframe = window.top.document.querySelector("#tidio-chat-iframe");
+                if (iframe) {
+                    iframe.style.position = "fixed";
+                    iframe.style.left = "20px";
+                    iframe.style.right = "auto";
+                    iframe.style.bottom = "20px";
+                    iframe.style.zIndex = "999999";
+                } else {
+                    setTimeout(moveTidio, 500);
+                }
+            }
+            if (window.tidioChatApi) {
+                window.tidioChatApi.on("ready", moveTidio);
+            } else {
+                window.top.document.addEventListener("tidioChat-ready", moveTidio);
+            }
+        };
+        window.top.document.body.appendChild(s);
+    })();
+    </script>
     """,
-    height=0,  # hide the iframe
-    width=0,
+    unsafe_allow_html=True
 )
