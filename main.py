@@ -3,8 +3,6 @@ import streamlit.components.v1 as components
 
 st.set_page_config(page_title="ScreenerPro with Tidio")
 
-st.title("🚀 ScreenerPro Partner Portal")
-st.write("Showcase your skills, collaborate with teams, earn badges, and apply to jobs — all in one modern career hub.")
 
 components.html(
     """
