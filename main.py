@@ -16,8 +16,8 @@ components.html(
       }
     </style>
     """,
-    height=0,   # <- no visible box
-    width=0,    # <- no visible box
+    height=600,   # <- no visible box
+    width=200,    # <- no visible box
 )
 st.title(" ScreenerPro with Watson Assistant")
 st.markdown(
