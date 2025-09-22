@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tidio Widget</title>
+</head>
+<body>
+  <!-- Tidio widget -->
+  <script src="//code.tidio.co/c19vp8j19zbvdpbrizjxmw1apt8buoie.js" async></script>
+
+  <script>
+  function onTidioChatApiReady() {
+      // Pin bottom-left
+      tidioChatApi.adjustStyles('#tidio { left: 20px !important; right: auto !important; bottom: 20px !important; }');
+  }
+  if (window.tidioChatApi) {
+      window.tidioChatApi.on('ready', onTidioChatApiReady);
+  } else {
+      document.addEventListener('tidioChat-ready', onTidioChatApiReady);
+  }
+  </script>
+</body>
+</html>
