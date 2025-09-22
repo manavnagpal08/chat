@@ -10,6 +10,10 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+st.title(" ScreenerPro with Watson Assistant")
+st.title(" ScreenerPro with Watson Assistant")
+st.title(" ScreenerPro with Watson Assistant")
+st.title(" ScreenerPro with Watson Assistant")
 components.html("""
 <!DOCTYPE html>
 <html>
