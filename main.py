@@ -5,7 +5,6 @@ st.set_page_config(page_title="ScreenerPro with Watson")
 
 st.title("💬 ScreenerPro with Watson Assistant")
 
-# Full HTML wrapper for Watson script
 components.html("""
 <!DOCTYPE html>
 <html>
@@ -13,9 +12,9 @@ components.html("""
   <body>
     <script>
       window.watsonAssistantChatOptions = {
-        integrationID: "49156221-4969-48c2-8924-fd0b623c2f33", // your integration ID
-        region: "au-syd", // your region
-        serviceInstanceID: "bf63ba6f-d81c-4de9-9e39-645fd55f6cbb", // your instance ID
+        integrationID: "49156221-4969-48c2-8924-fd0b623c2f33", // Your integration ID
+        region: "au-syd", // Your region
+        serviceInstanceID: "bf63ba6f-d81c-4de9-9e39-645fd55f6cbb", // Your instance ID
         onLoad: async (instance) => { await instance.render(); }
       };
       setTimeout(function(){
