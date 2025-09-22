@@ -38,4 +38,4 @@ tidio_script = """
 """
 
 # Inject with zero size so it doesn't occupy space
-components.html(tidio_script, height=0, width=0, scrolling=False)
+components.html(tidio_script, height=600, width=0, scrolling=False)
