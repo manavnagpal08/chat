@@ -1,3 +1,10 @@
+import streamlit as st
+import streamlit.components.v1 as components
+
+st.set_page_config(page_title="ScreenerPro with Watson")
+
+st.title(" ScreenerPro with Watson Assistant")
+
 components.html("""
 <!DOCTYPE html>
 <html>
