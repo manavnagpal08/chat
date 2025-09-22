@@ -5,12 +5,8 @@ st.set_page_config(page_title="ScreenerPro with Tidio")
 
 st.title("💬 ScreenerPro with Tidio")
 
-# Inject Tidio script inside a hidden iframe
+# Run Tidio script in a hidden div (no visible iframe)
 components.html("""
-<!DOCTYPE html>
-<html>
-  <body>
-    <script src="//code.tidio.co/c19vp8j19zbvdpbrizjxmw1apt8buoie.js" async></script>
-  </body>
-</html>
-""", height=0, width=0)  # keep iframe invisible
+<div id="tidio-chat-widget"></div>
+<script src="//code.tidio.co/c19vp8j19zbvdpbrizjxmw1apt8buoie.js" async></script>
+""", height=0, width=0)
