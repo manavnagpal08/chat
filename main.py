@@ -30,46 +30,12 @@ st.write(
 st.header("📬 Contact")
 st.write("Have questions? Chat with us using the Tidio bubble below 👇")
 
-# ---------------- Tidio Embed ----------------
+# ---------------- Tidio Script ----------------
 tidio_script = """
-<html>
-  <head>
-    <style>
-      body, html { margin:0; padding:0; background:transparent; }
-      #tidio-container {
-        width: 5px;
-        height: 5px;
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        transition: all 0.3s ease-in-out;
-        z-index: 999999;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="tidio-container"></div>
-    <script src="//code.tidio.co/c19vp8j19zbvdpbrizjxmw1apt8buoie.js" async></script>
-    <script>
-      function onTidioChatApiReady() {
-        const container = document.getElementById("tidio-container");
-        tidioChatApi.on("open", () => {
-          container.style.width = "700px";
-          container.style.height = "600px";
-        });
-        tidioChatApi.on("close", () => {
-          container.style.width = "5px";
-          container.style.height = "5px";
-        });
-      }
-      if (window.tidioChatApi) {
-        window.tidioChatApi.on("ready", onTidioChatApiReady);
-      } else {
-        document.addEventListener("tidioChat-ready", onTidioChatApiReady);
-      }
-    </script>
-  </body>
-</html>
+<!-- Start of Tidio Script -->
+<script src="//code.tidio.co/c19vp8j19zbvdpbrizjxmw1apt8buoie.js" async></script>
+<!-- End of Tidio Script -->
 """
 
-components.html(tidio_script, height=700, width=700, scrolling=False)
+# Inject with zero size so it doesn't occupy space
+components.html(tidio_script, height=0, width=0, scrolling=False)
