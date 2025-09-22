@@ -1,7 +1,7 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
-st.set_page_config(page_title="Tidio Test", layout="wide")
+st.set_page_config(page_title="Tidio Fixed", layout="wide")
 
 # ---------------- Page Content ----------------
 st.title("🚀 ScreenerPro Partner Portal")
@@ -34,8 +34,22 @@ st.write("Have questions? Chat with us using the Tidio bubble below 👇")
 tidio_script = """
 <!-- Start of Tidio Script -->
 <script src="//code.tidio.co/c19vp8j19zbvdpbrizjxmw1apt8buoie.js" async></script>
+
+<script>
+function onTidioChatApiReady() {
+  // Force fixed bubble at bottom-right, always visible
+  tidioChatApi.adjustStyles('#tidio-chat-iframe { position: fixed !important; bottom: 20px !important; right: 20px !important; left: auto !important; z-index: 999999 !important; }');
+  tidioChatApi.adjustStyles('#tidio { position: fixed !important; bottom: 20px !important; right: 20px !important; left: auto !important; z-index: 999999 !important; }');
+}
+
+if (window.tidioChatApi) {
+  window.tidioChatApi.on("ready", onTidioChatApiReady);
+} else {
+  document.addEventListener("tidioChat-ready", onTidioChatApiReady);
+}
+</script>
 <!-- End of Tidio Script -->
 """
 
-# Inject with zero size so it doesn't occupy space
-components.html(tidio_script, height=600, width=0, scrolling=False)
+# Inject script without taking space
+components.html(tidio_script, height=0, width=0, scrolling=False)
