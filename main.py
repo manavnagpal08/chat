@@ -1,4 +1,40 @@
 import streamlit as st
+st.title("🚀 ScreenerPro Partner Portal")
+st.write(
+    "Showcase your skills, collaborate with teams, earn badges, "
+    "and apply to jobs — all in one modern career hub."
+)
+st.title("🚀 ScreenerPro Partner Portal")
+st.write(
+    "Showcase your skills, collaborate with teams, earn badges, "
+    "and apply to jobs — all in one modern career hub."
+)
+st.title("🚀 ScreenerPro Partner Portal")
+st.write(
+    "Showcase your skills, collaborate with teams, earn badges, "
+    "and apply to jobs — all in one modern career hub."
+)
+st.title("🚀 ScreenerPro Partner Portal")
+st.write(
+    "Showcase your skills, collaborate with teams, earn badges, "
+    "and apply to jobs — all in one modern career hub."
+)
+st.title("🚀 ScreenerPro Partner Portal")
+st.write(
+    "Showcase your skills, collaborate with teams, earn badges, "
+    "and apply to jobs — all in one modern career hub."
+)
+st.title("🚀 ScreenerPro Partner Portal")
+st.write(
+    "Showcase your skills, collaborate with teams, earn badges, "
+    "and apply to jobs — all in one modern career hub."
+)
+st.title("🚀 ScreenerPro Partner Portal")
+st.write(
+    "Showcase your skills, collaborate with teams, earn badges, "
+    "and apply to jobs — all in one modern career hub."
+)
+
 st.components.v1.html(
     """
     <html>
